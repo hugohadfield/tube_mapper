@@ -19,6 +19,10 @@
 <a href="" id="output"></a>
 </div>
 
+<div>
+ <iframe src="" id="frm"></iframe> 
+</div>
+
 <script>
     function generateModelLink(){
         var base_string = "https://raw.githubusercontent.com/hugohadfield/tube_mapper/master/models/";
@@ -33,6 +37,7 @@
         var url = "http://3dviewer.net/#" + model_url + "," + image_url
         if (url != undefined){
             document.getElementById("output").innerHTML = "<a href="+url+">"+url+"</a>";
+            document.getElementById("frm").src = url;
         }
     };
 </script>
