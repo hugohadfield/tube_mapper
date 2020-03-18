@@ -24,7 +24,7 @@
         var base_string = "https://raw.githubusercontent.com/hugohadfield/tube_mapper/master/models/";
         var number = Math.floor(Math.random() * 100);
         var total_string = base_string + "test" + number.toString().padStart(2, "0") + ".obj";
-        console.log(total_string);
+        return total_string;
     };
 
     function updateLink(){
