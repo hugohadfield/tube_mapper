@@ -16,13 +16,9 @@ body {
 </head>
 <body>
 
-<h1> Image surface generator </h1>
+<h1> Random Surface Viewer </h1>
 
-<form>
-  <label for="url">Paste an image URL here:</label>
-  <input type="text" id="url" name="url"><br><br>
-</form>
-<button onclick="updateLink()">Generate link</button>
+<button onclick="updateLink()">Show me a random surface!</button>
 
 <div>
 <a href="" id="output"></a>
@@ -41,9 +37,10 @@ body {
     };
 
     function updateLink(){
-        var image_url = document.getElementById("url").value;
+        var image_url = "https://raw.githubusercontent.com/hugohadfield/tube_mapper/master/tube.png";
+        var material_url = "https://raw.githubusercontent.com/hugohadfield/tube_mapper/master/tube.mtl";
         var model_url = generateModelLink();
-        var url = "https://3dviewer.net/#" + model_url + "," + image_url
+        var url = "https://3dviewer.net/#" + model_url + "," + image_url + "," + material_url;
         if (url != undefined){
             document.getElementById("output").innerHTML = "<a href="+url+">"+url+"</a>";
             document.getElementById("frm").src = url;
