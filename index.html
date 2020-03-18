@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Get Current URL in JavaScript</title>
+</head>
+<body>
+
+<h1> Image surface generator </h1>
+
+<form>
+  <label for="url">Paste an image URL here:</label>
+  <input type="text" id="url" name="url"><br><br>
+</form>
+<button onclick="updateLink()">Generate link</button>
+
+<div>
+<a href="" id="output"></a>
+</div>
+
+<script>
+    function generateModelLink(){
+        var base_string = "https://raw.githubusercontent.com/hugohadfield/tube_mapper/master/models/";
+        var number = Math.floor(Math.random() * 100);
+        var total_string = base_string + "test" + number.toString().padStart(2, "0") + ".obj";
+        console.log(total_string);
+    };
+
+    function updateLink(){
+        var image_url = document.getElementById("url").value;
+        var model_url = generateModelLink();
+        var url = "http://3dviewer.net/#" + model_url + "," + image_url
+        if (url != undefined){
+            document.getElementById("output").innerHTML = "<a href="+url+">"+url+"</a>";
+        }
+    };
+</script>
+
+</body>
+</html>
