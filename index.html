@@ -34,7 +34,7 @@
     function updateLink(){
         var image_url = document.getElementById("url").value;
         var model_url = generateModelLink();
-        var url = "http://3dviewer.net/#" + model_url + "," + image_url
+        var url = "https://3dviewer.net/#" + model_url + "," + image_url
         if (url != undefined){
             document.getElementById("output").innerHTML = "<a href="+url+">"+url+"</a>";
             document.getElementById("frm").src = url;
